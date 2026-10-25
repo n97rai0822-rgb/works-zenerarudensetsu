@@ -971,7 +971,9 @@ recruit
 
     .recruit__img__sp {
         display: block;
-        max-height: 575px;
+        width: 100%;
+        aspect-ratio: 600 / 575;
+        margin-top: 50px;
     }
 
     .recruit {
@@ -981,7 +983,7 @@ recruit
     .recruit__content {
         padding: 20px 8%;
         max-width: 360px;
-        margin: -250px 0 0 0 ;
+        margin: -100px 0 0 0 ;
     }
 
     .recruit__lead {
