@@ -294,7 +294,6 @@ article header
 .main__title span:nth-child(3) {
     color: #FF0;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.80);
 }
 
 .main__subtxt {
@@ -344,7 +343,7 @@ article header
     width: 160px;
     height: 160px;
     border-radius: 327px;
-    border: 3px solid #FFF;
+    border: 3px solid #FF0;
     background: rgba(0, 90, 164, 0.75);
     box-shadow: 0px 0px 5px 0px #FF0;
     padding: 35px 0;
@@ -585,20 +584,6 @@ business
     z-index: -1;
 }
 
-.business__txtGroup:hover {
-  color: #fff;
-}
-
-.business__txtGroup:hover .business__number::after {
-  background-color: var(--primary-white);
-}
-
-
-.business__txtGroup:hover::before {
-  transform: scale(1, 1);
-}
-
-
 .business__number {
     display: flex;
     justify-content: space-between;
@@ -610,10 +595,6 @@ business
     transition: 0.6s;
 }
 
-.hover {
-    color: #FFF;
-}
-
 .business__number::after {
     display: block;
     content: '';
@@ -621,10 +602,6 @@ business
     width: 75%;
     height: 2px;
     transition: 0.6s;
-}
-
-.hover__color {
-    color: var(--primary-blue);
 }
 
 .business__title {
@@ -665,8 +642,24 @@ business
     z-index: 1;
 }
 
-.business__img:hover,
-.imgZoom {
+/* テキストと番号の文字色を変更 */
+.business__item:hover .business__txtGroup,
+.business__item:hover .business__number {
+    color: #FFF;
+}
+
+/* 番号の横線を白色に変更 */
+.business__item:hover .business__number::after {
+    background-color: var(--primary-white);
+}
+
+/* テキスト背景のアニメーション */
+.business__item:hover .business__txtGroup::before {
+    transform: scale(1, 1);
+}
+
+/* 画像を拡大 */
+.business__item:hover .business__img {
     transform: scale(1.2);
 }
 
@@ -725,12 +718,10 @@ business
     .imgBox {
         max-height: 262px;
     }
-
-
 }
 
 /*==========================
-contebts
+contents
 ==========================*/
 .contents {
     background: linear-gradient(90deg, #005AA4 0.7%, #C1E3FF 100%);
@@ -741,7 +732,7 @@ contebts
 .topic--contents {
     color: var(--primary-white);
     text-align: center;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .topic--contents span::before{
@@ -776,8 +767,22 @@ contebts
     z-index: -10;
 }
 
-.contents__img {
+.contents__imgBox {
+    max-width: 350px;
+    width: 100%;
     height: 320px;
+    transition: 0.6s;
+    overflow: hidden;
+}
+
+.contents__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: .5s;
+    position: relative;
+    z-index: 0;
 }
 
 .item__bottom {
@@ -852,22 +857,20 @@ contebts
     z-index: -1;
 }
 
-.contents__btn:hover {
-  color: #fff;
+.contents__item:hover .contents__img {
+    transform: scale(1.2);
 }
 
-.contents__btn:hover::before {
-  transform: scale(1, 1);
+.contents__item:hover .contents__btn {
+    color: #fff;
 }
- 
 
-.contents__btn:hover:after {
+.contents__item:hover .contents__btn::before {
+    transform: scale(1, 1);
+}
+
+.contents__item:hover .contents__btn::after {
     background-image: url(..//images/btn__arrow__white.svg);
-}
-
-/* contents pc */
-@media screen and (width<769px) {
-    
 }
 
 /*==========================
